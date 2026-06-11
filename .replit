@@ -6,6 +6,7 @@ hidden = [".pythonlibs"]
 
 [nix]
 channel = "stable-24_05"
+packages = ["cairo", "ffmpeg-full", "freetype", "ghostscript", "glibcLocales", "gobject-introspection", "gtk3", "pkg-config", "qhull", "tcl", "tk"]
 
 [unitTest]
 language = "python3"
@@ -17,3 +18,17 @@ deploymentTarget = "gce"
 [[ports]]
 localPort = 3000
 externalPort = 80
+
+[[ports]]
+localPort = 8000
+externalPort = 8000
+
+[agent]
+expertMode = true
+
+[userenv]
+
+[userenv.shared]
+HTTPS = "ON"
+DEBUG = "FALSE"
+SECRET_KEY = "2222"
